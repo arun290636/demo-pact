@@ -1,0 +1,16 @@
+#!groovy
+pipeline {
+
+  agent any
+
+  stages {
+    stage('Build') {
+      steps {
+        dir('PACT-maven-provider') {
+           sh '../mvnw clean verify'
+        }
+      }
+    }
+  }
+
+}
