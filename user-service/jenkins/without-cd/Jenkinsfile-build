@@ -6,7 +6,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        dir('PACT-maven-provider') {
+        dir('user-service') {
            sh '../mvnw clean verify'
         }
       }

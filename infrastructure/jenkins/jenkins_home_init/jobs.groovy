@@ -1,7 +1,7 @@
 def gitUrl = 'https://github.com/arun290636/demo-pact.git'
 
 // Main build and deploy job for consumer and provider each (continuous deployment case)
-['MagentoWeb', 'CustomerService'].each {
+['MagentoWeb', 'user-service'].each {
     def app = it
     pipelineJob("$app-build-and-deploy") {
         definition {
@@ -22,7 +22,7 @@ def gitUrl = 'https://github.com/arun290636/demo-pact.git'
 }
 
 // Separate build and deploy jobs for consumer and provider each (non-continuous deployment case)
-['MagentoWeb', 'CustomerService'].each {
+['MagentoWeb', 'user-service'].each {
     def app = it
     ['build', 'deploy'].each {
         def phase = it
